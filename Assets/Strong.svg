@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 332.49 332.49">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0" y1="166.25" x2="332.49" y2="166.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e100ff"/>
+      <stop offset=".5" stop-color="#921fde"/>
+      <stop offset="1" stop-color="#30168c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="95.31" y1="166.25" x2="332.49" y2="166.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30168c"/>
+      <stop offset=".5" stop-color="#921fde"/>
+      <stop offset="1" stop-color="#e100ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="95.31" y1="166.25" x2="237.18" y2="166.25" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Layout">
+    <g>
+      <path class="cls-1" d="M166.25,332.49C74.58,332.49,0,257.91,0,166.25S74.58,0,166.25,0s166.25,74.58,166.25,166.25-74.58,166.25-166.25,166.25ZM166.25,37.68c-70.89,0-128.56,57.67-128.56,128.56s57.67,128.56,128.56,128.56,128.56-57.67,128.56-128.56S237.14,37.68,166.25,37.68Z"/>
+      <path class="cls-2" d="M213.9,284.83c-65.39,0-118.59-53.2-118.59-118.59s53.2-118.59,118.59-118.59,118.59,53.2,118.59,118.59-53.2,118.59-118.59,118.59ZM213.9,85.34c-44.61,0-80.91,36.29-80.91,80.91s36.29,80.91,80.91,80.91,80.91-36.29,80.91-80.91-36.29-80.91-80.91-80.91Z"/>
+      <path class="cls-3" d="M166.25,237.18c-39.11,0-70.93-31.82-70.93-70.93s31.82-70.93,70.93-70.93,70.93,31.82,70.93,70.93-31.82,70.93-70.93,70.93ZM166.25,133c-18.33,0-33.25,14.92-33.25,33.25s14.92,33.25,33.25,33.25,33.25-14.92,33.25-33.25-14.92-33.25-33.25-33.25Z"/>
+    </g>
+  </g>
+</svg>
