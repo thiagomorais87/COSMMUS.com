@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ViewState = 'home' | 'about' | 'services' | 'methodology' | 'cases' | 'blog' | 'contact' | 'admin';
+export type ViewState = 'home' | 'about' | 'services' | 'methodology' | 'cases' | 'blog' | 'contact' | 'admin' | 'simulation';
 
 export interface ServiceItem {
   id: string;

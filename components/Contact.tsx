@@ -5,7 +5,7 @@ const Contact: React.FC = () => {
   const [interest, setInterest] = useState('consultoria');
 
   return (
-    <div className="bg-brand-dark py-32 border-t border-white/5">
+    <div className="bg-transparent py-32 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid lg:grid-cols-2 gap-20">
@@ -23,15 +23,17 @@ const Contact: React.FC = () => {
             <div className="space-y-8 border-l border-white/10 pl-8">
               <div>
                 <h3 className="text-white font-bold text-lg mb-1">Contato Direto</h3>
-                <a href="mailto:contato@cosmmus.com.br" className="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2">
-                   contato@cosmmus.com.br
+                <a href="mailto:contato@cosmmus.com" className="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                   contato@cosmmus.com
                 </a>
-                <p className="text-gray-400 mt-1">+55 (11) 99999-9999</p>
+                <a href="tel:+5562999546265" className="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                   (62) 99954-6265
+                </a>
               </div>
 
               <div>
                 <h3 className="text-white font-bold text-lg mb-1">Base de Operações</h3>
-                <p className="text-gray-400">São Paulo, SP - Brasil</p>
+                <p className="text-gray-400">Goiânia-GO</p>
               </div>
             </div>
           </div>

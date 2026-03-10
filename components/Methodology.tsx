@@ -14,7 +14,7 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
   ];
 
   return (
-    <section className="py-32 bg-brand-dark relative overflow-hidden">
+    <section className="py-32 bg-transparent relative overflow-hidden">
       
       {/* Subtle background gradients */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-20 pointer-events-none">

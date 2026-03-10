@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
   return (
-    <footer className="bg-brand-navy border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-transparent border-t border-white/10 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           
@@ -28,9 +28,9 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
               Desenvolvendo negócios, potencializando pessoas e criando o futuro através de gestão estratégica e inovação.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-pink hover:scale-110 transition-all duration-300"><Instagram size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-cyan hover:text-brand-dark hover:scale-110 transition-all duration-300"><Linkedin size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition-all duration-300"><Facebook size={18} /></a>
+              <a href="https://www.instagram.com/cosmmus.business" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-pink hover:scale-110 transition-all duration-300"><Instagram size={18} /></a>
+              <a href="https://www.linkedin.com/company/cosmmus/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-cyan hover:text-brand-dark hover:scale-110 transition-all duration-300"><Linkedin size={18} /></a>
+              <a href="https://www.facebook.com/share/1DpoLCTWET/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition-all duration-300"><Facebook size={18} /></a>
             </div>
           </div>
 

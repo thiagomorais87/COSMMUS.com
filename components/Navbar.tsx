@@ -15,6 +15,7 @@ const navItems: NavItem[] = [
   { label: 'Metodologia', value: 'methodology' },
   { label: 'Cases', value: 'cases' },
   { label: 'Conteúdos', value: 'blog' },
+  { label: 'Cosmos', value: 'simulation' },
   { label: 'Contato', value: 'contact' },
 ];
 

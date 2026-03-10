@@ -25,14 +25,14 @@ const Services: React.FC<ServicesProps> = ({ limit, onViewAll }) => {
   const displayServices = limit ? content.services.slice(0, limit) : content.services;
 
   return (
-    <section id="services-preview" className="py-32 bg-brand-dark relative border-t border-white/5">
+    <section id="services-preview" className="py-32 bg-transparent relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-brand-pink font-bold tracking-widest uppercase text-xs mb-4">Nosso Arsenal</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              Soluções para quem não aceita<br/> o <span className="text-gray-500">médio</span>.
+              Soluções para quem não aceita<br/> o <span className="text-brand-pink">médio</span>.
             </h3>
           </div>
           {limit && onViewAll && (
