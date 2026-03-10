@@ -1,9 +1,10 @@
 import React from 'react';
 import { Target, Heart, Zap, Shield } from 'lucide-react';
+import marcosPhoto from '../IMAGENS/FOTO MARCOS.webp';
 
 const About: React.FC = () => {
   return (
-    <div className="bg-brand-dark text-white">
+    <div className="bg-transparent text-white">
       
       {/* Manifesto Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -30,13 +31,13 @@ const About: React.FC = () => {
                 </div>
             </div>
             <div className="lg:col-span-5 relative">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700 ease-out">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden relative hover:scale-[1.02] transition-all duration-700 ease-out shadow-2xl shadow-brand-purple/20">
                     <img 
-                        src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1632&auto=format&fit=crop" 
-                        alt="Equipe Cosmmus" 
+                        src={marcosPhoto} 
+                        alt="Marcos Antônio - CEO Cosmmus" 
                         className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-80"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-60"></div>
                     <div className="absolute bottom-8 left-8">
                         <p className="text-white font-bold text-xl">Marcos Antônio</p>
                         <p className="text-brand-cyan text-sm tracking-widest uppercase">Fundador & CEO</p>

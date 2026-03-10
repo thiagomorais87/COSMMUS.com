@@ -53,10 +53,10 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
   const LabelClass = "block text-xs uppercase tracking-wider text-brand-cyan mb-1 font-bold";
 
   return (
-    <div className="min-h-screen bg-brand-navy text-white flex">
+    <div className="min-h-screen bg-transparent text-white flex relative">
       
       {/* Sidebar */}
-      <div className="w-64 bg-brand-dark border-r border-white/10 p-6 flex flex-col">
+      <div className="w-64 bg-brand-dark/40 backdrop-blur-md border-r border-white/10 p-6 flex flex-col relative z-20">
         <h2 className="text-xl font-bold mb-8 text-white">Cosmmus <span className="text-brand-pink">Admin</span></h2>
         
         <nav className="flex-1 space-y-2">

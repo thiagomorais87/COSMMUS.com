@@ -11,12 +11,12 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   const { hero } = content;
 
   return (
-    <div className="relative overflow-hidden bg-brand-dark min-h-screen flex items-center justify-center">
+    <div className="relative overflow-hidden bg-transparent min-h-screen flex items-center justify-center">
       
       {/* Minimal Background Elements */}
       <div className="absolute inset-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-purple/10 rounded-full blur-[120px] opacity-40"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[120px] opacity-30"></div>
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-brand-purple/10 rounded-full blur-[120px] opacity-20"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[120px] opacity-15"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
