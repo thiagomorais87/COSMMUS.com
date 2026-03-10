@@ -12,6 +12,8 @@ import Blog from './components/Blog';
 import AdminPanel from './components/AdminPanel';
 import AdminLogin from './components/AdminLogin';
 import { ContentProvider } from './context/ContentContext';
+import SpaceBackground from './components/SpaceBackground';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const AppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('home');
@@ -21,13 +23,6 @@ const AppContent: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentView]);
-
-  if (currentView === 'admin') {
-      if (!isAdminAuthenticated) {
-          return <AdminLogin onLogin={() => setIsAdminAuthenticated(true)} onCancel={() => setCurrentView('home')} />;
-      }
-      return <AdminPanel onLogout={() => setIsAdminAuthenticated(false)} onExit={() => setCurrentView('home')} />;
-  }
 
   const renderContent = () => {
     switch (currentView) {
@@ -58,15 +53,30 @@ const AppContent: React.FC = () => {
     }
   };
 
-  return (
-    <div className="min-h-screen flex flex-col bg-brand-dark text-white selection:bg-brand-pink selection:text-white">
-      <Navbar currentView={currentView} onChangeView={setCurrentView} />
-      
-      <main className="flex-grow pt-20">
-        {renderContent()}
-      </main>
+  const renderMainContent = () => {
+    if (currentView === 'admin') {
+      if (!isAdminAuthenticated) {
+        return <AdminLogin onLogin={() => setIsAdminAuthenticated(true)} onCancel={() => setCurrentView('home')} />;
+      }
+      return <AdminPanel onLogout={() => setIsAdminAuthenticated(false)} onExit={() => setCurrentView('home')} />;
+    }
 
-      <Footer onViewChange={setCurrentView} />
+    return (
+      <>
+        <Navbar currentView={currentView} onChangeView={setCurrentView} />
+        <main className="flex-grow pt-20 relative z-10">
+          {renderContent()}
+        </main>
+        <Footer onViewChange={setCurrentView} />
+      </>
+    );
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-transparent text-white selection:bg-brand-pink selection:text-white relative">
+      <SpaceBackground />
+      {renderMainContent()}
+      <WhatsAppButton />
     </div>
   );
 };

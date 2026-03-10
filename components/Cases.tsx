@@ -6,7 +6,7 @@ const Cases: React.FC = () => {
   const { cases } = content;
 
   return (
-    <div className="bg-brand-dark py-20">
+    <div className="bg-transparent py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-12 text-center">Cases e Projetos</h1>
         
