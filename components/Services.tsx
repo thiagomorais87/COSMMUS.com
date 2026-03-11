@@ -52,7 +52,7 @@ const Services: React.FC<ServicesProps> = ({ limit, onViewAll }) => {
             return (
               <div 
                 key={service.id} 
-                className="group relative p-8 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500 border border-white/5 hover:border-brand-purple/30"
+                className="group relative p-8 rounded-2xl bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500 border border-white/5 hover:border-brand-purple/30 flex flex-col items-center text-center"
               >
                 <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <ArrowUpRight className="text-brand-cyan w-6 h-6" />
@@ -66,14 +66,14 @@ const Services: React.FC<ServicesProps> = ({ limit, onViewAll }) => {
                   {service.title}
                 </h4>
                 
-                <p className="text-gray-400 text-base leading-relaxed mb-8 font-light">
+                <p className="text-white/70 text-base leading-relaxed mb-8 font-light">
                   {service.description}
                 </p>
                 
-                <div className="border-t border-white/5 pt-6">
-                  <ul className="space-y-3">
+                <div className="border-t border-white/5 pt-6 w-full">
+                  <ul className="space-y-3 flex flex-col items-center">
                       {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-500 group-hover:text-gray-300 transition-colors">
+                      <li key={idx} className="flex items-center text-sm text-white/50 group-hover:text-white/90 transition-colors">
                           <span className="w-1 h-1 rounded-full bg-brand-pink mr-3"></span>
                           {feature}
                       </li>

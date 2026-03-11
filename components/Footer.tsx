@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
                     <span className="text-[8px] font-bold uppercase tracking-[0.35em] text-white/80 leading-none mt-1">Business</span>
                 </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm font-light">
+            <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-sm font-light">
               Desenvolvendo negócios, potencializando pessoas e criando o futuro através de gestão estratégica e inovação.
             </p>
             <div className="flex space-x-4">
@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
           {/* Links 1 */}
           <div className="md:col-span-2 md:col-start-6">
             <h4 className="text-white font-bold mb-6">A Empresa</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
+            <ul className="space-y-4 text-sm text-white/70">
               <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Sobre Nós</button></li>
               <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Manifesto</button></li>
               <li><button onClick={() => onViewChange('cases')} className="hover:text-brand-cyan transition-colors">Cases</button></li>
@@ -48,7 +48,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
           {/* Links 2 */}
           <div className="md:col-span-2">
             <h4 className="text-white font-bold mb-6">Soluções</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
+            <ul className="space-y-4 text-sm text-white/70">
               <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Consultoria</button></li>
               <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Cosmmus Coop</button></li>
               <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Finanças & Vórtex</button></li>
@@ -60,7 +60,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
           {/* Newsletter */}
           <div className="md:col-span-3">
             <h4 className="text-white font-bold mb-6">Boletim Cosmmus</h4>
-            <p className="text-gray-400 text-sm mb-4 font-light">Receba insights semanais sobre gestão e futuro.</p>
+            <p className="text-white/70 text-sm mb-4 font-light">Receba insights semanais sobre gestão e futuro.</p>
             <div className="flex flex-col gap-3">
               <input 
                 type="email" 
@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
 
         </div>
 
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
           <p>&copy; {new Date().getFullYear()} COSMMUS Business. Todos os direitos reservados.</p>
           <div className="flex space-x-8 mt-4 md:mt-0 items-center">
             <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>

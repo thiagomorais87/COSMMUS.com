@@ -16,24 +16,24 @@ const Contact: React.FC = () => {
               Pronto para o <br/>
               <span className="text-brand-pink">próximo nível?</span>
             </h1>
-            <p className="text-gray-400 text-xl mb-12 font-light leading-relaxed">
+            <p className="text-white/70 text-xl mb-12 font-light leading-relaxed">
               A transformação começa com uma decisão. Se você está cansado de resultados medianos e quer escalar seu negócio com inteligência, fale conosco.
             </p>
 
             <div className="space-y-8 border-l border-white/10 pl-8">
               <div>
                 <h3 className="text-white font-bold text-lg mb-1">Contato Direto</h3>
-                <a href="mailto:contato@cosmmus.com" className="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                <a href="mailto:contato@cosmmus.com" className="text-white/70 hover:text-brand-cyan transition-colors flex items-center gap-2">
                    contato@cosmmus.com
                 </a>
-                <a href="tel:+5562999546265" className="text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                <a href="tel:+5562999546265" className="text-white/70 hover:text-brand-cyan transition-colors flex items-center gap-2">
                    (62) 99954-6265
                 </a>
               </div>
 
               <div>
                 <h3 className="text-white font-bold text-lg mb-1">Base de Operações</h3>
-                <p className="text-gray-400">Goiânia-GO</p>
+                <p className="text-white/70">Goiânia-GO</p>
               </div>
             </div>
           </div>

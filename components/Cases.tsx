@@ -12,7 +12,7 @@ const Cases: React.FC = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {cases.map((item, idx) => (
-            <div key={item.id} className="group cursor-pointer">
+            <div key={item.id} className="group cursor-pointer text-center">
               <div className="overflow-hidden rounded-xl mb-4 border border-white/10 bg-white/5">
                 <img 
                     src={item.img} 

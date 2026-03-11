@@ -29,7 +29,7 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
             Engenharia de Resultado
           </h3>
           {!preview && (
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light">
+            <p className="text-white/70 max-w-2xl mx-auto text-lg font-light">
                 Não acreditamos em sorte. Acreditamos em método, disciplina e dados.
                 Nosso processo é desenhado para eliminar o acaso da equação.
             </p>
@@ -47,7 +47,7 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
                   <span className="font-bold text-xl text-white group-hover:text-brand-cyan transition-colors">{step.num}</span>
                 </div>
                 <h4 className="text-xl font-bold text-white mb-3 tracking-tight">{step.title}</h4>
-                <p className="text-sm text-gray-500 leading-relaxed group-hover:text-gray-300 transition-colors">{step.desc}</p>
+                <p className="text-sm text-white/50 leading-relaxed group-hover:text-white/90 transition-colors">{step.desc}</p>
               </div>
             ))}
           </div>
