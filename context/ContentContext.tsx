@@ -20,51 +20,134 @@ const defaultContent: SiteContent = {
   services: [
     {
       id: 'consulting',
-      title: 'Arquitetura de Negócios',
-      description: 'Não fazemos apenas planos; desenhamos ecossistemas de lucro e eficiência.',
+      title: 'Consultoria de Negócios e Planos de Negócios',
+      description: 'O coração da Cosmmus Business. Diagnóstico do negócio e Desenvolvimento do Plano de Negócios.',
       iconName: 'Briefcase',
-      features: ['Diagnóstico Profundo', 'Modelagem de Negócios', 'Inteligência de Mercado']
+      features: ['Estudo de Mercado', 'Plano Financeiro', 'Plano Comercial', 'Plano de Comunicação e Branding', 'Plano Operacional', 'Acompanhamento de 6 meses', 'Indicadores e resultados'],
+      ctaText: 'Solicitar proposta personalizada'
     },
     {
       id: 'coop',
-      title: 'Ecossistema Coop',
-      description: 'Potencializamos a força coletiva com governança de elite e estratégias de expansão.',
+      title: 'Cosmos Coop – Cooperativas e Organizações',
+      description: 'Diagnóstico social e institucional para fortalecer o cooperativismo.',
       iconName: 'Users',
-      features: ['Engenharia Social', 'Políticas de Expansão', 'Cultura de Alta Performance']
+      features: ['Elaboração de planos de trabalho e políticas internas', 'Desenvolvimento da cultura organizacional', 'Regulamento de cooperado', 'Gestão de parcerias e sustentabilidade'],
+      ctaText: 'Fale com a equipe Cosmmus Coop'
     },
     {
       id: 'finances',
-      title: 'Inteligência de Capital',
-      description: 'Transforme números frios em combustível para crescimento exponencial.',
+      title: 'Cosmmus Finances',
+      description: 'Planejamento financeiro empresarial e pessoal focado em resultados.',
       iconName: 'TrendingUp',
-      features: ['Blindagem Financeira', 'Otimização de Custos', 'Valuation & Funding']
+      features: ['Estruturação de capital e investimentos', 'Diagnóstico de custos e precificação', 'Consultoria em finanças cooperativas'],
+      ctaText: 'Agende uma consultoria financeira'
     },
     {
       id: 'sustainability',
-      title: 'Impacto Regenerativo',
-      description: 'Lucro e propósito não disputam espaço. Eles se multiplicam.',
+      title: 'Cosmmus Sustentabilidade',
+      description: 'Projetos de impacto ambiental e social.',
       iconName: 'Leaf',
-      features: ['ESG na Prática', 'Design Circular', 'Legado Socioambiental']
+      features: ['Diagnóstico socioambiental', 'Educação e responsabilidade ambiental', 'Políticas e relatórios de sustentabilidade'],
+      ctaText: 'Desenvolva um projeto sustentável com a Cosmmus'
     },
     {
       id: 'vortex',
-      title: 'Vórtex Digital',
-      description: 'Contabilidade preditiva. Saia do retrovisor e olhe para o horizonte.',
+      title: 'Vórtex Assessoria Contábil',
+      description: 'Integra o ecossistema Cosmmus.',
       iconName: 'Calculator',
-      features: ['Dashboards Preditivos', 'Compliance Inteligente', 'Eficiência Tributária']
+      features: ['Planejamento tributário', 'Contabilidade estratégica e digital', 'Integração contábil-financeira', 'Dashboards e relatórios gerenciais'],
+      ctaText: 'Conheça a Vórtex Assessoria Contábil'
     },
     {
-      id: 'training',
-      title: 'Academy Cosmmus',
-      description: 'Forjamos líderes capazes de navegar no caos e criar ordem.',
+      id: 'treinamentos',
+      title: 'Cosmmus Treinamentos, Imersões e Palestras',
+      description: 'Desenvolve pessoas, equipes e lideranças.',
       iconName: 'GraduationCap',
-      features: ['Imersões de Impacto', 'Mentoria Executiva', 'Treinamento de Elite']
+      features: ['Imersões Cosmmus', 'Palestras e Workshops', 'Mentorias Cosmmus'],
+      ctaText: 'Ver todas as opções',
+      subServices: [
+        {
+          title: 'Imersões Cosmmus',
+          description: 'Experiências intensivas de planejamento e liderança.',
+          features: ['Agenda de próximas edições', 'Galeria de fotos e vídeos'],
+          ctaText: 'Quero participar'
+        },
+        {
+          title: 'Palestras e Workshops',
+          description: 'Temas disponíveis: Gestão e Empreendedorismo, Cooperativismo e Economia Solidária, Planejamento Estratégico, Sustentabilidade e Inovação.',
+          features: ['Contratação de palestras', 'Bio do palestrante (Marcos Antônio)'],
+          ctaText: 'Contrate uma palestra Cosmmus'
+        },
+        {
+          title: 'Mentorias Cosmmus',
+          description: 'Acompanhamento individual e corporativo.',
+          features: ['Diagnóstico e plano de ação personalizado', 'Planos de 3, 6 ou 12 sessões'],
+          ctaText: 'Agende sua mentoria'
+        }
+      ]
     }
   ],
   cases: [
-    { id: '1', category: 'Cooperativas', title: 'Reestruturação de Governança Coop', img: 'https://picsum.photos/400/300?random=1' },
-    { id: '2', category: 'Empresas', title: 'Escalando Vendas B2B', img: 'https://picsum.photos/400/300?random=2' },
-    { id: '3', category: 'Sustentabilidade', title: 'Projeto Carbono Neutro', img: 'https://picsum.photos/400/300?random=3' },
+    { 
+      id: '1', 
+      category: 'Empreendedores e Empresas (Cosmmus Business & Finances)', 
+      title: 'De 0 a 100: A Reestruturação Estratégica da Manufactura Vale', 
+      img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1000&auto=format&fit=crop',
+      challenge: 'A empresa enfrentava um crescimento desordenado. O faturamento era alto, mas a lucratividade era baixa devido à falta de processos financeiros e um plano comercial reativo.',
+      strategy: 'Implementamos o Painel de Comando Cosmmus. Realizamos um diagnóstico 360°, seguido da precificação correta de produtos e a estruturação de um funil de vendas ativo, integrando o setor financeiro à operação.',
+      results: [
+        'Aumento de 22% na margem de lucro em 4 meses.',
+        'Redução de 15% em custos operacionais desnecessários.',
+        'Previsibilidade de caixa para os próximos 12 meses.'
+      ],
+      testimony: 'A Cosmmus não apenas nos deu um plano, eles nos deram uma visão clara do futuro. Hoje, cada centavo e cada venda fazem sentido dentro do nosso propósito.',
+      author: 'Roberto S., CEO da Manufactura Vale.'
+    },
+    { 
+      id: '2', 
+      category: 'Cooperativas e Organizações (Cosmos Coop)', 
+      title: 'Fortalecimento da Cultura e Gestão na CoopCerrado', 
+      img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop',
+      challenge: 'Conflitos geracionais na liderança e falta de engajamento dos cooperados mais jovens, o que ameaçava a continuidade da sucessão familiar na cooperativa.',
+      strategy: 'Diagnóstico social e institucional profundo. Desenvolvemos um novo Regulamento de Cooperado e um programa de imersão focado em Cultura Organizacional, unindo a tradição dos fundadores com a inovação exigida pelo mercado.',
+      results: [
+        'Aumento de 40% na participação ativa em assembleias.',
+        'Implementação de 3 novos projetos de inovação liderados por jovens cooperados.',
+        'Melhoria no clima organizacional medida por pesquisa interna.'
+      ],
+      testimony: 'O trabalho da Cosmos Coop trouxe alma para nossa governança. Entendemos que o cooperativismo forte nasce da união de pessoas preparadas.',
+      author: 'Ana Maria, Presidente da CoopCerrado.'
+    },
+    { 
+      id: '3', 
+      category: 'Sustentabilidade e Impacto Social (Cosmmus Sustentabilidade)', 
+      title: 'Rota do Impacto: Implementação de ESG na Rede Logística Express', 
+      img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1000&auto=format&fit=crop',
+      challenge: 'A empresa de logística precisava se adequar às exigências de grandes clientes multinacionais que demandavam relatórios de sustentabilidade e redução da pegada de carbono.',
+      strategy: 'Elaboração de um Diagnóstico Socioambiental completo. Criamos políticas de gestão de resíduos nas garagens e um programa de compensação de carbono, além de treinamentos de responsabilidade ambiental para os motoristas.',
+      results: [
+        'Conquista do Selo de Empresa Sustentável.',
+        'Redução de 12% na emissão de CO2 no primeiro ano.',
+        'Retenção de 100% dos contratos com grandes multinacionais (fidelização por ESG).'
+      ],
+      testimony: 'Sustentabilidade deixou de ser um custo e virou um diferencial competitivo graças ao projeto estruturado pela Cosmmus.',
+      author: 'Juliano F., Gerente de Operações.'
+    },
+    { 
+      id: '4', 
+      category: 'Treinamentos e Imersões (Cosmmus Treinamentos)', 
+      title: 'Liderança de Elite: A Transformação do Time Gestor da TechFlow', 
+      img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000&auto=format&fit=crop',
+      challenge: 'Falta de alinhamento entre os gestores, gerando ruídos na comunicação e alta rotatividade de talentos (turnover) na equipe de tecnologia.',
+      strategy: 'Realização da Imersão Cosmmus: Liderança com Propósito. Foram dois dias de treinamento intensivo focados em soft skills, comunicação não-violenta e ferramentas de gestão de alta performance.',
+      results: [
+        'Queda de 35% no turnover em seis meses.',
+        'Aumento do índice de satisfação dos colaboradores (eNPS).',
+        'Melhoria clara na agilidade de entrega de projetos (Metodologias Ágeis).'
+      ],
+      testimony: 'A imersão foi o divisor de águas que precisávamos. Saímos de lá não apenas como chefes, mas como líderes focados em pessoas e resultados.',
+      author: 'Fernanda L., Diretora de RH da TechFlow.'
+    }
   ],
   blog: [
     { id: '1', title: '5 Tendências para Gestão em 2024', category: 'Estratégia', date: '12 Out 2023', excerpt: 'Descubra como a IA e a humanização estão moldando o futuro.' },
@@ -82,7 +165,7 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
   // Initial Data Load
   useEffect(() => {
     const loadFromLocal = () => {
-        const savedContent = localStorage.getItem('cosmmus_content');
+        const savedContent = localStorage.getItem('cosmmus_content_v2');
         if (savedContent) {
             try {
                 setContent(JSON.parse(savedContent));
@@ -102,14 +185,14 @@ export const ContentProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setContent(newContent);
 
     // 2. Save to Persistence Layer (Local)
-    localStorage.setItem('cosmmus_content', JSON.stringify(newContent));
+    localStorage.setItem('cosmmus_content_v2', JSON.stringify(newContent));
     console.log("Content saved to LocalStorage");
   };
 
   const resetToDefaults = () => {
     if (confirm('Tem certeza? Isso apagará todas as suas edições personalizadas.')) {
         setContent(defaultContent);
-        localStorage.removeItem('cosmmus_content');
+        localStorage.removeItem('cosmmus_content_v2');
     }
   };
 

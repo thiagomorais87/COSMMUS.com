@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           
           {/* Badge */}
           <div className="mb-8 animate-fade-in-up">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-brand-cyan text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-colors cursor-default">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-brand-pink text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-colors cursor-default">
               <Zap size={12} className="mr-2 fill-brand-cyan" />
               {hero.badge}
             </span>
@@ -37,17 +37,18 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </h1>
           
           {/* Subheadline */}
-          <p className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed mb-12 font-light">
+          <p className="text-lg md:text-2xl text-white/70 max-w-3xl leading-relaxed mb-12 font-light">
             {hero.subtitle}
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-6 items-center w-full justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 items-center w-full justify-center">
             <button 
               onClick={onCtaClick}
-              className="group relative px-10 py-5 rounded-full bg-white text-brand-dark font-bold text-lg tracking-tight hover:bg-gray-100 transition-all duration-300 min-w-[200px]"
+              className="group relative px-8 h-16 rounded-full bg-white text-brand-dark hover:bg-gray-100 transition-all duration-300 min-w-[260px] flex flex-col items-center justify-center"
             >
-              Desafiar o Status Quo
+              <span className="font-bold text-base tracking-tight leading-tight">Desafiar o Status Quo</span>
+              <span className="text-xs font-medium text-brand-dark/70 mt-0.5">Agende uma reunião estratégica</span>
               <div className="absolute inset-0 rounded-full ring-2 ring-white/50 scale-105 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></div>
             </button>
             
@@ -56,10 +57,10 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   const element = document.getElementById('services-preview');
                   element?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-10 py-5 rounded-full border border-white/10 text-white font-medium text-lg hover:border-brand-pink/50 hover:text-brand-pink transition-all flex items-center gap-2 min-w-[200px] justify-center"
+              className="px-8 h-16 rounded-full border border-white/10 text-white font-medium text-base hover:border-brand-pink/50 hover:text-brand-pink transition-all flex items-center gap-2 min-w-[260px] justify-center"
             >
               Explorar Soluções
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </button>
           </div>
 
@@ -67,15 +68,15 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           <div className="mt-24 border-t border-white/5 pt-8 flex flex-col md:flex-row gap-8 md:gap-16 text-center md:text-left opacity-60 hover:opacity-100 transition-opacity">
              <div>
                 <p className="text-2xl font-bold text-white">{hero.stat1Value}</p>
-                <p className="text-xs uppercase tracking-widest text-gray-500">{hero.stat1Label}</p>
+                <p className="text-xs uppercase tracking-widest text-white/50">{hero.stat1Label}</p>
              </div>
              <div>
                 <p className="text-2xl font-bold text-white">{hero.stat2Value}</p>
-                <p className="text-xs uppercase tracking-widest text-gray-500">{hero.stat2Label}</p>
+                <p className="text-xs uppercase tracking-widest text-white/50">{hero.stat2Label}</p>
              </div>
              <div>
                 <p className="text-2xl font-bold text-white">{hero.stat3Value}</p>
-                <p className="text-xs uppercase tracking-widest text-gray-500">{hero.stat3Label}</p>
+                <p className="text-xs uppercase tracking-widest text-white/50">{hero.stat3Label}</p>
              </div>
           </div>
 

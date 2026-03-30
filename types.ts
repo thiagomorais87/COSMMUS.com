@@ -1,6 +1,13 @@
 import React from 'react';
 
-export type ViewState = 'home' | 'about' | 'services' | 'methodology' | 'cases' | 'blog' | 'contact' | 'admin' | 'simulation';
+export type ViewState = 'home' | 'about' | 'services' | 'methodology' | 'cases' | 'blog' | 'contact' | 'admin' | 'simulation' | 'service-details' | 'case-details';
+
+export interface SubService {
+  title: string;
+  description: string;
+  features: string[];
+  ctaText: string;
+}
 
 export interface ServiceItem {
   id: string;
@@ -8,6 +15,8 @@ export interface ServiceItem {
   description: string;
   features: string[];
   iconName: string; // Changed from ElementType to string for serialization
+  ctaText?: string;
+  subServices?: SubService[];
 }
 
 export interface NavItem {
@@ -28,6 +37,11 @@ export interface CaseItem {
   category: string;
   title: string;
   img: string;
+  challenge: string;
+  strategy: string;
+  results: string[];
+  testimony: string;
+  author: string;
 }
 
 export interface HeroContent {
