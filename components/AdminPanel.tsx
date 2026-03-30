@@ -49,6 +49,14 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
     updateContent('cases', newCases);
   };
 
+  const handleCaseResultChange = (caseIndex: number, resultIndex: number, value: string) => {
+    const newCases = [...content.cases];
+    const newResults = [...newCases[caseIndex].results];
+    newResults[resultIndex] = value;
+    newCases[caseIndex] = { ...newCases[caseIndex], results: newResults };
+    updateContent('cases', newCases);
+  };
+
   const InputClass = "w-full bg-black/20 border border-white/10 rounded px-3 py-2 text-white focus:border-brand-pink focus:outline-none mb-4";
   const LabelClass = "block text-xs uppercase tracking-wider text-brand-cyan mb-1 font-bold";
 
@@ -132,7 +140,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
             
             {activeTab === 'hero' && (
                 <div className="space-y-6">
-                    <div className="bg-white/5 p-6 rounded-xl border border-white/5">
+                    <div className="bg-brand-surface/40 backdrop-blur-xl p-6 rounded-xl border border-white/5">
                         <h4 className="text-xl font-bold mb-6 text-white border-b border-white/10 pb-2">Conteúdo Principal</h4>
                         <div>
                             <label className={LabelClass}>Badge</label>
@@ -152,7 +160,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
                         </div>
                     </div>
 
-                    <div className="bg-white/5 p-6 rounded-xl border border-white/5 grid grid-cols-2 gap-6">
+                    <div className="bg-brand-surface/40 backdrop-blur-xl p-6 rounded-xl border border-white/5 grid grid-cols-2 gap-6">
                          <h4 className="text-xl font-bold mb-2 text-white border-b border-white/10 pb-2 col-span-2">Estatísticas</h4>
                          <div>
                             <label className={LabelClass}>Valor 1</label>
@@ -179,7 +187,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
             {activeTab === 'services' && (
                 <div className="space-y-8">
                     {content.services.map((service, idx) => (
-                        <div key={service.id} className="bg-white/5 p-6 rounded-xl border border-white/5">
+                        <div key={service.id} className="bg-brand-surface/40 backdrop-blur-xl p-6 rounded-xl border border-white/5">
                             <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
                                 <h4 className="font-bold text-white">Serviço #{idx + 1}</h4>
                                 <span className="text-xs text-gray-500 bg-black/30 px-2 py-1 rounded">ID: {service.id}</span>
@@ -206,6 +214,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
                             <label className={LabelClass}>Descrição</label>
                             <textarea className={`${InputClass} h-20`} value={service.description} onChange={(e) => handleServiceChange(idx, 'description', e.target.value)} />
 
+                            <label className={LabelClass}>Texto do Botão (CTA)</label>
+                            <input type="text" className={InputClass} value={service.ctaText || ''} onChange={(e) => handleServiceChange(idx, 'ctaText', e.target.value)} />
+
                             <label className={LabelClass}>Características</label>
                             <div className="space-y-2">
                                 {service.features.map((feat, fIdx) => (
@@ -220,7 +231,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
             {activeTab === 'cases' && (
                 <div className="space-y-8">
                     {content.cases.map((item, idx) => (
-                        <div key={item.id} className="bg-white/5 p-6 rounded-xl border border-white/5">
+                        <div key={item.id} className="bg-brand-surface/40 backdrop-blur-xl p-6 rounded-xl border border-white/5">
                              <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
                                 <h4 className="font-bold text-white">Case #{idx + 1}</h4>
                             </div>
@@ -234,8 +245,32 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
                                     <input type="text" className={InputClass} value={item.category} onChange={(e) => handleCaseChange(idx, 'category', e.target.value)} />
                                 </div>
                             </div>
-                             <label className={LabelClass}>URL da Imagem</label>
-                             <input type="text" className={InputClass} value={item.img} onChange={(e) => handleCaseChange(idx, 'img', e.target.value)} />
+                            <label className={LabelClass}>URL da Imagem</label>
+                            <input type="text" className={InputClass} value={item.img} onChange={(e) => handleCaseChange(idx, 'img', e.target.value)} />
+                            
+                            <label className={LabelClass}>Desafio Inicial</label>
+                            <textarea className={`${InputClass} h-20`} value={item.challenge} onChange={(e) => handleCaseChange(idx, 'challenge', e.target.value)} />
+                            
+                            <label className={LabelClass}>Estratégia Aplicada</label>
+                            <textarea className={`${InputClass} h-20`} value={item.strategy} onChange={(e) => handleCaseChange(idx, 'strategy', e.target.value)} />
+                            
+                            <label className={LabelClass}>Resultados e Indicadores</label>
+                            <div className="space-y-2 mb-4">
+                                {item.results.map((res, rIdx) => (
+                                    <input key={rIdx} type="text" className={InputClass} value={res} onChange={(e) => handleCaseResultChange(idx, rIdx, e.target.value)} />
+                                ))}
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className={LabelClass}>Depoimento</label>
+                                    <textarea className={`${InputClass} h-20`} value={item.testimony} onChange={(e) => handleCaseChange(idx, 'testimony', e.target.value)} />
+                                </div>
+                                <div>
+                                    <label className={LabelClass}>Autor do Depoimento</label>
+                                    <input type="text" className={InputClass} value={item.author} onChange={(e) => handleCaseChange(idx, 'author', e.target.value)} />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -244,7 +279,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ onLogout, onExit }) => {
             {activeTab === 'blog' && (
                 <div className="space-y-8">
                     {content.blog.map((post, idx) => (
-                        <div key={post.id} className="bg-white/5 p-6 rounded-xl border border-white/5">
+                        <div key={post.id} className="bg-brand-surface/40 backdrop-blur-xl p-6 rounded-xl border border-white/5">
                              <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
                                 <h4 className="font-bold text-white">Post #{idx + 1}</h4>
                             </div>

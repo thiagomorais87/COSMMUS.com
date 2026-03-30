@@ -11,65 +11,66 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
   return (
     <footer className="bg-transparent border-t border-white/10 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        <div className="flex flex-col items-center text-center mb-16">
           
           {/* Brand */}
-          <div className="md:col-span-4">
+          <div className="flex flex-col items-center mb-12">
              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10">
+                <div className="w-12 h-12">
                     <Logo />
                 </div>
-                <div className="flex flex-col">
-                    <span className="font-black text-xl tracking-tight text-white leading-none">COSMMUS</span>
-                    <span className="text-[8px] font-bold uppercase tracking-[0.35em] text-white/80 leading-none mt-1">Business</span>
+                <div className="flex flex-col text-left">
+                    <span className="font-black text-2xl tracking-tight text-white leading-none">COSMMUS</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-white/80 leading-none mt-1">Business</span>
                 </div>
             </div>
-            <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-sm font-light">
+            <p className="text-white/70 text-base leading-relaxed mb-8 max-w-xl font-light">
               Desenvolvendo negócios, potencializando pessoas e criando o futuro através de gestão estratégica e inovação.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://www.instagram.com/cosmmus.business" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-pink hover:scale-110 transition-all duration-300"><Instagram size={18} /></a>
-              <a href="https://www.linkedin.com/company/cosmmus/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-cyan hover:text-brand-dark hover:scale-110 transition-all duration-300"><Linkedin size={18} /></a>
-              <a href="https://www.facebook.com/share/1DpoLCTWET/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition-all duration-300"><Facebook size={18} /></a>
+            <div className="flex space-x-6">
+              <a href="https://www.instagram.com/cosmmus.business" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-pink hover:scale-110 transition-all duration-300"><Instagram size={20} /></a>
+              <a href="https://www.linkedin.com/company/cosmmus/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-cyan hover:text-brand-dark hover:scale-110 transition-all duration-300"><Linkedin size={20} /></a>
+              <a href="https://www.facebook.com/share/1DpoLCTWET/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-blue-600 hover:scale-110 transition-all duration-300"><Facebook size={20} /></a>
             </div>
           </div>
 
-          {/* Links 1 */}
-          <div className="md:col-span-2 md:col-start-6">
-            <h4 className="text-white font-bold mb-6">A Empresa</h4>
-            <ul className="space-y-4 text-sm text-white/70">
-              <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Sobre Nós</button></li>
-              <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Manifesto</button></li>
-              <li><button onClick={() => onViewChange('cases')} className="hover:text-brand-cyan transition-colors">Cases</button></li>
-              <li><button onClick={() => onViewChange('contact')} className="hover:text-brand-cyan transition-colors">Trabalhe Conosco</button></li>
-            </ul>
-          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 w-full max-w-4xl">
+            {/* Links 1 */}
+            <div>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">A Empresa</h4>
+              <ul className="space-y-4 text-sm text-white/70">
+                <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Sobre Nós</button></li>
+                <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Manifesto</button></li>
+                <li><button onClick={() => onViewChange('cases')} className="hover:text-brand-cyan transition-colors">Cases</button></li>
+                <li><button onClick={() => onViewChange('contact')} className="hover:text-brand-cyan transition-colors">Trabalhe Conosco</button></li>
+              </ul>
+            </div>
 
-          {/* Links 2 */}
-          <div className="md:col-span-2">
-            <h4 className="text-white font-bold mb-6">Soluções</h4>
-            <ul className="space-y-4 text-sm text-white/70">
-              <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Consultoria</button></li>
-              <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Cosmmus Coop</button></li>
-              <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Finanças & Vórtex</button></li>
-              <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Sustentabilidade</button></li>
-              <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Treinamentos</button></li>
-            </ul>
-          </div>
+            {/* Links 2 */}
+            <div>
+              <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Soluções</h4>
+              <ul className="space-y-4 text-sm text-white/70">
+                <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Consultoria</button></li>
+                <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Finanças & Vórtex</button></li>
+                <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Sustentabilidade</button></li>
+                <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Treinamentos</button></li>
+              </ul>
+            </div>
 
-          {/* Newsletter */}
-          <div className="md:col-span-3">
-            <h4 className="text-white font-bold mb-6">Boletim Cosmmus</h4>
-            <p className="text-white/70 text-sm mb-4 font-light">Receba insights semanais sobre gestão e futuro.</p>
-            <div className="flex flex-col gap-3">
-              <input 
-                type="email" 
-                placeholder="Seu e-mail corporativo" 
-                className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm w-full focus:outline-none focus:border-brand-pink focus:bg-white/10 transition-all"
-              />
-              <button className="bg-white text-brand-dark px-4 py-3 rounded-lg font-bold hover:bg-brand-cyan transition-colors text-sm uppercase tracking-wide">
-                Assinar
-              </button>
+            {/* Newsletter */}
+            <div className="flex flex-col items-center">
+              <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Boletim Cosmmus</h4>
+              <p className="text-white/70 text-sm mb-6 font-light">Receba insights semanais sobre gestão e futuro.</p>
+              <div className="flex flex-col gap-3 w-full max-w-xs">
+                <input 
+                  type="email" 
+                  placeholder="Seu e-mail corporativo" 
+                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm w-full focus:outline-none focus:border-brand-pink focus:bg-white/10 transition-all text-center"
+                />
+                <button className="bg-white text-brand-dark px-4 py-3 rounded-lg font-bold hover:bg-brand-cyan transition-colors text-sm uppercase tracking-wide">
+                  Assinar
+                </button>
+              </div>
             </div>
           </div>
 

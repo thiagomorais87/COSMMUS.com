@@ -8,10 +8,10 @@ const Contact: React.FC = () => {
     <div className="bg-transparent py-32 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="flex flex-col items-center">
           
           {/* Narrative Side */}
-          <div>
+          <div className="text-center max-w-4xl mb-20">
             <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-white leading-none">
               Pronto para o <br/>
               <span className="text-brand-pink">próximo nível?</span>
@@ -20,26 +20,28 @@ const Contact: React.FC = () => {
               A transformação começa com uma decisão. Se você está cansado de resultados medianos e quer escalar seu negócio com inteligência, fale conosco.
             </p>
 
-            <div className="space-y-8 border-l border-white/10 pl-8">
+            <div className="flex flex-col md:flex-row justify-center gap-12 md:gap-24 border-t border-white/10 pt-12">
               <div>
-                <h3 className="text-white font-bold text-lg mb-1">Contato Direto</h3>
-                <a href="mailto:contato@cosmmus.com" className="text-white/70 hover:text-brand-cyan transition-colors flex items-center gap-2">
-                   contato@cosmmus.com
-                </a>
-                <a href="tel:+5562999546265" className="text-white/70 hover:text-brand-cyan transition-colors flex items-center gap-2">
-                   (62) 99954-6265
-                </a>
+                <h3 className="text-white font-bold text-lg mb-2">Contato Direto</h3>
+                <div className="flex flex-col items-center">
+                  <a href="mailto:contato@cosmmus.com" className="text-white/70 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                     contato@cosmmus.com
+                  </a>
+                  <a href="tel:+5562999546265" className="text-white/70 hover:text-brand-cyan transition-colors flex items-center gap-2">
+                     (62) 99954-6265
+                  </a>
+                </div>
               </div>
 
               <div>
-                <h3 className="text-white font-bold text-lg mb-1">Base de Operações</h3>
+                <h3 className="text-white font-bold text-lg mb-2">Base de Operações</h3>
                 <p className="text-white/70">Goiânia-GO</p>
               </div>
             </div>
           </div>
 
           {/* Minimal Form */}
-          <div className="bg-white/[0.02] p-8 md:p-12 rounded-3xl border border-white/5 backdrop-blur-sm">
+          <div className="bg-brand-surface/40 backdrop-blur-xl p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl w-full max-w-2xl">
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

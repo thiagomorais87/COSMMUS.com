@@ -8,8 +8,8 @@ const About: React.FC = () => {
       
       {/* Manifesto Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7">
+        <div className="flex flex-col items-center text-center">
+            <div className="max-w-4xl mb-16">
                 <span className="text-brand-cyan font-bold tracking-widest uppercase text-xs mb-4 block">Nosso Manifesto</span>
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8 tracking-tighter">
                     Não somos consultores.<br/>
@@ -25,12 +25,12 @@ const About: React.FC = () => {
                         Nosso propósito é desbloquear esse potencial, unindo a precisão dos números com a força 
                         das relações humanas.
                     </p>
-                    <p className="text-white font-medium border-l-2 border-brand-pink pl-6 py-2">
+                    <p className="text-white font-medium border-l-2 border-brand-pink pl-6 py-2 mx-auto max-w-2xl text-left">
                         "Crie o futuro com a gente" não é um slogan. É um convite para sair da zona de conforto e liderar o seu mercado.
                     </p>
                 </div>
             </div>
-            <div className="lg:col-span-5 relative">
+            <div className="max-w-md w-full relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden relative hover:scale-[1.02] transition-all duration-700 ease-out shadow-2xl shadow-brand-purple/20">
                     <img 
                         src={marcosPhoto} 
@@ -38,7 +38,7 @@ const About: React.FC = () => {
                         className="object-cover w-full h-full"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent opacity-60"></div>
-                    <div className="absolute bottom-8 left-8">
+                    <div className="absolute bottom-8 left-8 text-left">
                         <p className="text-white font-bold text-xl">Marcos Antônio</p>
                         <p className="text-brand-cyan text-sm tracking-widest uppercase">Fundador & CEO</p>
                     </div>
