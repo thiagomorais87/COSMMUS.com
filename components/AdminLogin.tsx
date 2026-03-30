@@ -22,7 +22,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ onLogin, onCancel }) => {
 
   return (
     <div className="min-h-screen bg-transparent flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-md">
+      <div className="w-full max-w-md glass-card border border-white/10 rounded-2xl p-8 backdrop-blur-md">
         <div className="text-center mb-8">
             <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Lock className="text-brand-pink w-8 h-8" />

@@ -15,7 +15,6 @@ const navItems: NavItem[] = [
   { label: 'Metodologia', value: 'methodology' },
   { label: 'Cases', value: 'cases' },
   { label: 'Conteúdos', value: 'blog' },
-  { label: 'Cosmos', value: 'simulation' },
   { label: 'Contato', value: 'contact' },
 ];
 
@@ -56,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView }) => {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                     currentView === item.value
                       ? 'text-brand-dark bg-white shadow-[0_0_20px_rgba(255,255,255,0.3)]'
-                      : 'text-gray-400 hover:text-white hover:bg-white/5'
+                      : 'text-white/70 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {item.label}
@@ -69,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView }) => {
           <div className="-mr-2 flex lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white/70 hover:text-white hover:bg-gray-700 focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -88,7 +87,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentView, onChangeView }) => {
                 className={`block w-full text-left px-3 py-4 rounded-md text-base font-medium border-b border-white/5 last:border-0 ${
                   currentView === item.value
                     ? 'text-white bg-white/10 pl-6'
-                    : 'text-gray-400 hover:text-white hover:pl-4'
+                    : 'text-white/70 hover:text-white hover:pl-4'
                 } transition-all duration-300`}
               >
                 {item.label}
