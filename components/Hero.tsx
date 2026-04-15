@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           
           {/* Badge */}
           <div className="mb-8 animate-fade-in-up">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-brand-pink text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-colors cursor-default">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-brand-cyan text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-colors cursor-default">
               <Zap size={12} className="mr-2 fill-brand-cyan" />
               {hero.badge}
             </span>

@@ -16,6 +16,7 @@ import AdminLogin from './components/AdminLogin';
 import { ContentProvider } from './context/ContentContext';
 import SpaceBackground from './components/SpaceBackground';
 import WhatsAppButton from './components/WhatsAppButton';
+import CtaSection from './components/CtaSection';
 
 const AppContent: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewState>('home');
@@ -48,6 +49,7 @@ const AppContent: React.FC = () => {
                 <Services limit={3} onViewAll={() => setCurrentView('services')} onViewService={handleViewService} />
             </div>
             <Methodology preview />
+            <CtaSection onCtaClick={() => setCurrentView('contact')} />
           </>
         );
       case 'about':
