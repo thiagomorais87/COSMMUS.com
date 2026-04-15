@@ -27,12 +27,36 @@ const defaultContent: SiteContent = {
       ctaText: 'Solicitar proposta personalizada'
     },
     {
-      id: 'coop',
-      title: 'Cosmos Coop – Cooperativas e Organizações',
+      id: 'coop-cooperativas',
+      title: 'Cosmmus Coop – Cooperativas',
       description: 'Diagnóstico social e institucional para fortalecer o cooperativismo.',
       iconName: 'Users',
       features: ['Elaboração de planos de trabalho e políticas internas', 'Desenvolvimento da cultura organizacional', 'Regulamento de cooperado', 'Gestão de parcerias e sustentabilidade'],
       ctaText: 'Fale com a equipe Cosmmus Coop'
+    },
+    {
+      id: 'coop-organizacoes',
+      title: 'Cosmmus Org – Organizações',
+      description: 'Atuação voltada para organizações do terceiro setor.',
+      iconName: 'Shield',
+      features: ['Organizações não governamentais (ONGs)', 'Fundações', 'OS (Organizações Sociais)', 'Estruturação institucional e governança'],
+      ctaText: 'Fale com a equipe Cosmmus Org'
+    },
+    {
+      id: 'tech',
+      title: 'Cosmmus Tech',
+      description: 'Soluções tecnológicas desenvolvidas exclusivamente para seu negócio.',
+      iconName: 'Cpu',
+      features: ['Automações', 'Desenvolvimento de sites', 'Sistemas ERP', 'Soluções personalizadas'],
+      ctaText: 'Solicitar solução tech'
+    },
+    {
+      id: 'labs',
+      title: 'Cosmmus Labs',
+      description: 'Soluções criativas e estratégicas para posicionamento de marca.',
+      iconName: 'Star',
+      features: ['Comunicação', 'Branding', 'Gestão de redes sociais'],
+      ctaText: 'Conhecer o Cosmmus Labs'
     },
     {
       id: 'finances',
@@ -105,7 +129,7 @@ const defaultContent: SiteContent = {
     },
     { 
       id: '2', 
-      category: 'Cooperativas e Organizações (Cosmos Coop)', 
+      category: 'Cooperativas e Organizações (Cosmmus Coop)', 
       title: 'Fortalecimento da Cultura e Gestão na CoopCerrado', 
       img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1000&auto=format&fit=crop',
       challenge: 'Conflitos geracionais na liderança e falta de engajamento dos cooperados mais jovens, o que ameaçava a continuidade da sucessão familiar na cooperativa.',
@@ -115,7 +139,7 @@ const defaultContent: SiteContent = {
         'Implementação de 3 novos projetos de inovação liderados por jovens cooperados.',
         'Melhoria no clima organizacional medida por pesquisa interna.'
       ],
-      testimony: 'O trabalho da Cosmos Coop trouxe alma para nossa governança. Entendemos que o cooperativismo forte nasce da união de pessoas preparadas.',
+      testimony: 'O trabalho da Cosmmus Coop trouxe alma para nossa governança. Entendemos que o cooperativismo forte nasce da união de pessoas preparadas.',
       author: 'Ana Maria, Presidente da CoopCerrado.'
     },
     { 

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Activity, Target, Zap, ActivitySquare, RefreshCw, Crosshair, BarChart2, ShoppingCart, MessageSquare, Settings, CheckCircle2 } from 'lucide-react';
+import { Activity, Target, Zap, ActivitySquare, RefreshCw, Crosshair, BarChart2, ShoppingCart, MessageSquare, Settings, CheckCircle2, Star, ArrowRight } from 'lucide-react';
 
 interface MethodologyProps {
   preview?: boolean;
@@ -8,13 +8,20 @@ interface MethodologyProps {
 
 const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const lineRef = useRef<HTMLDivElement>(null);
+  
+  useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
+  const { scrollYProgress: lineProgress } = useScroll({
+    target: lineRef,
+    offset: ["start center", "end center"]
+  });
+
   // Parallax line height
-  const lineHeight = useTransform(scrollYProgress, [0, 0.8], ["0%", "100%"]);
+  const lineHeight = useTransform(lineProgress, [0, 1], ["0%", "100%"]);
 
   const steps = [
     { num: '01', title: 'Diagnóstico de Precisão', desc: 'Entramos no núcleo da operação para entender onde a energia está sendo dissipada.', icon: Crosshair },
@@ -68,7 +75,7 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6"
           >
-            Transformamos complexidade em método.
+            Transformamos complexidade em <span className="text-brand-pink">método</span>.
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -84,11 +91,11 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
         {/* Section 1: A Linha de Tração */}
         <div className="mb-32 relative">
           <div className="text-center mb-16">
-            <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 font-mono">1. A Linha de Tração</h4>
-            <p className="text-white/50 font-mono text-sm">As Etapas do Circuito</p>
+            <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 font-sans">1. A Linha de Tração</h4>
+            <p className="text-white/50 font-sans text-sm">As Etapas do Circuito</p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
+          <div ref={lineRef} className="relative max-w-4xl mx-auto">
             {/* Continuous Flow Line */}
             <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-1 bg-white/5 md:-translate-x-1/2 rounded-full overflow-hidden">
               <motion.div 
@@ -136,40 +143,85 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
         </div>
 
         {/* Section 2: O Núcleo do Ecossistema */}
-        <div className="mb-32">
-          <div className="text-center mb-16">
-            <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 font-mono">2. O Núcleo do Ecossistema</h4>
-            <p className="text-white/50 font-mono text-sm">Os 5 Eixos Estratégicos</p>
+        <div className="mb-32 relative">
+          {/* Decorative Stars Background for this section */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(15)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full"
+                initial={{ opacity: 0.2 }}
+                animate={{ 
+                  opacity: [0.2, 0.8, 0.2],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ 
+                  duration: 2 + Math.random() * 3, 
+                  repeat: Infinity,
+                  delay: Math.random() * 5
+                }}
+                style={{ 
+                  top: `${Math.random() * 100}%`, 
+                  left: `${Math.random() * 100}%` 
+                }}
+              />
+            ))}
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
-            {/* Interactive Pentagon */}
+          <div className="text-center mb-16 relative z-10">
+            <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 font-sans">2. O Núcleo do Ecossistema</h4>
+            <p className="text-white/50 font-sans text-sm">Os 5 Eixos Estratégicos</p>
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 relative z-10">
+            {/* Interactive Constellation */}
             <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex-shrink-0">
-              {/* Center Core */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-brand-dark border border-brand-cyan/30 flex items-center justify-center z-20 shadow-[0_0_30px_rgba(0,255,255,0.2)]">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-purple to-brand-cyan animate-pulse opacity-50 blur-sm absolute"></div>
-                <ActivitySquare className="w-8 h-8 text-white relative z-10" />
+              {/* Center Core - The Sun/Main Star */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 flex items-center justify-center z-20">
+                <motion.div 
+                  className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-purple to-brand-pink opacity-50 blur-xl absolute"
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+                <div className="w-12 h-12 rounded-full bg-brand-dark border border-brand-cyan/30 flex items-center justify-center relative z-10 shadow-[0_0_30px_rgba(0,255,255,0.3)]">
+                  <Star className="w-6 h-6 text-brand-cyan fill-brand-cyan/20" />
+                </div>
               </div>
 
-              {/* Connecting Lines (Pentagon shape) */}
+              {/* Connecting Lines (Constellation style) */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 400 400">
-                <polygon 
+                {/* Pentagon lines */}
+                <motion.polygon 
                   points="200,40 352,151 294,329 106,329 48,151" 
                   fill="none" 
-                  stroke="rgba(255,255,255,0.05)" 
-                  strokeWidth="2"
+                  stroke="rgba(0,255,255,0.1)" 
+                  strokeWidth="1.5"
+                  strokeDasharray="4 4"
                 />
+                
                 {/* Lines to center */}
-                <line x1="200" y1="40" x2="200" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-                <line x1="352" y1="151" x2="200" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-                <line x1="294" y1="329" x2="200" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-                <line x1="106" y1="329" x2="200" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-                <line x1="48" y1="151" x2="200" y2="200" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+                {axes.map((axis, i) => {
+                  const radian = (axis.angle * Math.PI) / 180;
+                  const x2 = 200 + Math.cos(radian) * 160;
+                  const y2 = 200 + Math.sin(radian) * 160;
+                  const isActive = activeAxis === axis.id;
+                  
+                  return (
+                    <motion.line 
+                      key={i}
+                      x1="200" y1="200" 
+                      x2={x2} y2={y2} 
+                      stroke={isActive ? "rgba(0, 255, 255, 0.5)" : "rgba(255,255,255,0.05)"} 
+                      strokeWidth={isActive ? "2" : "1"}
+                      transition={{ duration: 0.3 }}
+                    />
+                  );
+                })}
               </svg>
 
-              {/* Axis Nodes */}
+              {/* Axis Nodes - Stars */}
               {axes.map((axis) => {
-                const radiusPercent = 40; // 40% of container width/height
+                const radiusPercent = 40; 
                 const radian = (axis.angle * Math.PI) / 180;
                 const xPercent = Math.cos(radian) * radiusPercent;
                 const yPercent = Math.sin(radian) * radiusPercent;
@@ -191,18 +243,29 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
                     onClick={() => setActiveAxis(isActive ? null : axis.id)}
                     whileHover={{ scale: 1.1 }}
                   >
-                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-brand-cyan shadow-[0_0_20px_rgba(0,255,255,0.5)] border-none' 
-                        : 'bg-brand-dark border border-white/20 hover:border-brand-cyan/50'
-                    }`}>
-                      <Icon className={`w-5 h-5 md:w-6 md:h-6 ${isActive ? 'text-brand-dark' : 'text-white/70'}`} />
-                    </div>
-                    {/* Label */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 text-center w-24">
-                      <span className={`text-[10px] md:text-xs font-mono font-bold transition-colors ${isActive ? 'text-brand-cyan' : 'text-white/50'}`}>
-                        {axis.title}
-                      </span>
+                    <div className="relative group cursor-pointer">
+                      {/* Star Shape Container */}
+                      <div className={`w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-all duration-300 relative z-10 ${
+                        isActive 
+                          ? 'text-brand-cyan' 
+                          : 'text-brand-cyan/40 hover:text-brand-cyan/70'
+                      }`}>
+                        <Star 
+                          size={isActive ? 40 : 36} 
+                          className={`absolute transition-all duration-500 ${isActive ? 'fill-brand-cyan/20' : 'fill-transparent'}`} 
+                          strokeWidth={1}
+                        />
+                        <div className="relative z-20">
+                          <Icon size={18} />
+                        </div>
+                      </div>
+
+                      {/* Label */}
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 text-center w-24">
+                        <span className={`text-[10px] md:text-xs font-sans font-bold transition-colors tracking-wider ${isActive ? 'text-brand-cyan' : 'text-white/30'}`}>
+                          {axis.title}
+                        </span>
+                      </div>
                     </div>
                   </motion.div>
                 );
@@ -223,19 +286,19 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
                     className="relative z-10"
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></div>
-                      <h5 className="text-2xl font-bold text-white font-mono uppercase tracking-wider">
+                      <div className="w-2 h-2 rounded-full bg-brand-pink animate-pulse"></div>
+                      <h5 className="text-2xl font-bold text-white font-sans uppercase tracking-wider">
                         {axes.find(a => a.id === activeAxis)?.title}
                       </h5>
                     </div>
-                    <p className="text-white/70 text-lg leading-relaxed font-mono">
+                    <p className="text-white/70 text-lg leading-relaxed font-sans">
                       {axes.find(a => a.id === activeAxis)?.desc}
                     </p>
                   </motion.div>
                 ) : (
                   <div className="relative z-10 text-center opacity-50">
                     <ActivitySquare className="w-12 h-12 mx-auto mb-4 text-white/30" />
-                    <p className="font-mono text-sm uppercase tracking-widest">Inicie a varredura<br/>(Passe o mouse sobre os eixos)</p>
+                    <p className="font-sans text-sm uppercase tracking-widest">Inicie a varredura<br/>(Passe o mouse sobre os eixos)</p>
                   </div>
                 )}
               </div>
@@ -246,8 +309,8 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
         {/* Section 3: Nosso Diferencial */}
         <div>
           <div className="text-center mb-16">
-            <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 font-mono">3. A Ciência por Trás do Propósito</h4>
-            <p className="text-white/50 font-mono text-sm">Especificações de Sistema</p>
+            <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 font-sans">3. A Ciência por Trás do Propósito</h4>
+            <p className="text-white/50 font-sans text-sm">Especificações de Sistema</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -267,13 +330,14 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
                 <div className="flex items-start gap-4">
                   <CheckCircle2 className="w-6 h-6 text-brand-cyan flex-shrink-0 mt-1" />
                   <div>
-                    <h5 className="text-lg font-bold text-white mb-2 font-mono">{diff.title}</h5>
-                    <p className="text-white/60 text-sm leading-relaxed font-mono">{diff.desc}</p>
+                    <h5 className="text-lg font-bold text-white mb-2 font-sans">{diff.title}</h5>
+                    <p className="text-white/60 text-sm leading-relaxed font-sans">{diff.desc}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
         </div>
 
       </div>

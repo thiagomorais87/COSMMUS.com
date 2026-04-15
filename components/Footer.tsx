@@ -11,10 +11,10 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
   return (
     <footer className="bg-transparent border-t border-white/10 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
           
           {/* Brand */}
-          <div className="flex flex-col items-center mb-12">
+          <div className="lg:col-span-4 flex flex-col items-start text-left">
              <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12">
                     <Logo />
@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
                     <span className="text-[10px] font-bold uppercase tracking-[0.35em] text-white/80 leading-none mt-1">Business</span>
                 </div>
             </div>
-            <p className="text-white/70 text-base leading-relaxed mb-8 max-w-xl font-light">
+            <p className="text-white/70 text-base leading-relaxed mb-8 max-w-sm font-light">
               Desenvolvendo negócios, potencializando pessoas e criando o futuro através de gestão estratégica e inovação.
             </p>
             <div className="flex space-x-6">
@@ -34,9 +34,9 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 w-full max-w-4xl">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-12 w-full">
             {/* Links 1 */}
-            <div>
+            <div className="text-left">
               <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">A Empresa</h4>
               <ul className="space-y-4 text-sm text-white/70">
                 <li><button onClick={() => onViewChange('about')} className="hover:text-brand-cyan transition-colors">Sobre Nós</button></li>
@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
             </div>
 
             {/* Links 2 */}
-            <div>
+            <div className="text-left">
               <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Soluções</h4>
               <ul className="space-y-4 text-sm text-white/70">
                 <li><button onClick={() => onViewChange('services')} className="hover:text-brand-cyan transition-colors">Consultoria</button></li>
@@ -58,14 +58,14 @@ const Footer: React.FC<FooterProps> = ({ onViewChange }) => {
             </div>
 
             {/* Newsletter */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-start text-left">
               <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Boletim Cosmmus</h4>
               <p className="text-white/70 text-sm mb-6 font-light">Receba insights semanais sobre gestão e futuro.</p>
               <div className="flex flex-col gap-3 w-full max-w-xs">
                 <input 
                   type="email" 
                   placeholder="Seu e-mail corporativo" 
-                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm w-full focus:outline-none focus:border-brand-pink focus:bg-white/10 transition-all text-center"
+                  className="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-lg text-sm w-full focus:outline-none focus:border-brand-pink focus:bg-white/10 transition-all"
                 />
                 <button className="bg-white text-brand-dark px-4 py-3 rounded-lg font-bold hover:bg-brand-cyan transition-colors text-sm uppercase tracking-wide">
                   Assinar
