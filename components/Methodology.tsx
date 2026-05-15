@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Activity, Target, Zap, ActivitySquare, RefreshCw, Crosshair, BarChart2, ShoppingCart, MessageSquare, Settings, CheckCircle2, Star, ArrowRight } from 'lucide-react';
+import { Activity, Target, Zap, ActivitySquare, RefreshCw, Crosshair, BarChart2, ShoppingCart, MessageSquare, Settings, CheckCircle2, ArrowRight } from 'lucide-react';
+import Logo from './Logo';
 
 interface MethodologyProps {
   preview?: boolean;
@@ -32,11 +33,11 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
   ];
 
   const axes = [
-    { id: 'mercado', title: 'Mercado', desc: 'Análise de ambiente e posicionamento de vanguarda.', icon: Target, angle: -90 },
-    { id: 'financas', title: 'Finanças', desc: 'Inteligência de capital, custos e precificação estratégica.', icon: BarChart2, angle: -18 },
-    { id: 'comercial', title: 'Comercial', desc: 'A máquina de vendas: processos escaláveis e conversão.', icon: ShoppingCart, angle: 54 },
-    { id: 'comunicacao', title: 'Comunicação', desc: 'Branding e voz: como o mercado percebe o seu valor.', icon: MessageSquare, angle: 126 },
-    { id: 'operacao', title: 'Operação', desc: 'Eficiência interna: processos que rodam sem fricção.', icon: Settings, angle: 198 },
+    { id: 'mercado', title: 'Mercado', desc: 'Análise de ambiente e posicionamento de vanguarda.', icon: Target, angle: -90, color: '#0ea5e9' },
+    { id: 'financas', title: 'Finanças', desc: 'Inteligência de capital, custos e precificação estratégica.', icon: BarChart2, angle: -18, color: '#22c55e' },
+    { id: 'comercial', title: 'Comercial', desc: 'A máquina de vendas: processos escaláveis e conversão.', icon: ShoppingCart, angle: 54, color: '#eab308' },
+    { id: 'comunicacao', title: 'Comunicação', desc: 'Branding e voz: como o mercado percebe o seu valor.', icon: MessageSquare, angle: 126, color: '#d946ef' },
+    { id: 'operacao', title: 'Operação', desc: 'Eficiência interna: processos que rodam sem fricção.', icon: Settings, angle: 198, color: '#f97316' },
   ];
 
   const [activeAxis, setActiveAxis] = useState<string | null>(null);
@@ -176,100 +177,121 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 relative z-10">
             {/* Interactive Constellation */}
             <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex-shrink-0">
-              {/* Center Core - The Sun/Main Star */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 flex items-center justify-center z-20">
+              
+              {/* Static Center Core - The Sun/Logo */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center z-30">
                 <motion.div 
-                  className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-purple to-brand-pink opacity-50 blur-xl absolute"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-                  transition={{ duration: 4, repeat: Infinity }}
+                  className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-brand-pink/10 blur-3xl absolute"
+                  animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+                  transition={{ duration: 3, repeat: Infinity }}
                 />
-                <div className="w-12 h-12 rounded-full bg-brand-dark border border-brand-cyan/30 flex items-center justify-center relative z-10 shadow-[0_0_30px_rgba(0,255,255,0.3)]">
-                  <Star className="w-6 h-6 text-brand-cyan fill-brand-cyan/20" />
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-brand-dark/90 backdrop-blur-md border border-brand-pink/30 flex items-center justify-center relative z-10 shadow-[0_0_50px_rgba(217,0,255,0.2)] overflow-hidden p-5">
+                  <Logo className="w-full h-full text-white" />
                 </div>
               </div>
 
-              {/* Connecting Lines (Constellation style) */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 400 400">
-                {/* Pentagon lines */}
-                <motion.polygon 
-                  points="200,40 352,151 294,329 106,329 48,151" 
-                  fill="none" 
-                  stroke="rgba(0,255,255,0.1)" 
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                />
-                
-                {/* Lines to center */}
-                {axes.map((axis, i) => {
-                  const radian = (axis.angle * Math.PI) / 180;
-                  const x2 = 200 + Math.cos(radian) * 160;
-                  const y2 = 200 + Math.sin(radian) * 160;
-                  const isActive = activeAxis === axis.id;
+              {/* Rotating Orbit Elements */}
+              <motion.div 
+                className="absolute inset-0 w-full h-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+              >
+                {/* Connecting Lines (Constellation style) */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 400 400">
+                  {/* Outer circle line */}
+                  <circle 
+                    cx="200" cy="200" r="160" 
+                    fill="none" 
+                    stroke="rgba(217,0,255,0.1)" 
+                    strokeWidth="1"
+                    strokeDasharray="8 8"
+                  />
                   
+                  {/* Lines to center */}
+                  {axes.map((axis, i) => {
+                    const radian = (axis.angle * Math.PI) / 180;
+                    const x2 = 200 + Math.cos(radian) * 160;
+                    const y2 = 200 + Math.sin(radian) * 160;
+                    const isActive = activeAxis === axis.id;
+                    
+                    return (
+                      <motion.line 
+                        key={i}
+                        x1="200" y1="200" 
+                        x2={x2} y2={y2} 
+                        stroke={isActive ? axis.color : "rgba(217,0,255,0.05)"} 
+                        strokeWidth={isActive ? "2" : "1"}
+                        opacity={isActive ? 0.8 : 0.3}
+                        transition={{ duration: 0.3 }}
+                      />
+                    );
+                  })}
+                </svg>
+
+                {/* Axis Nodes */}
+                {axes.map((axis) => {
+                  const radiusPercent = 40; 
+                  const radian = (axis.angle * Math.PI) / 180;
+                  const xPercent = Math.cos(radian) * radiusPercent;
+                  const yPercent = Math.sin(radian) * radiusPercent;
+                  const isActive = activeAxis === axis.id;
+                  const Icon = axis.icon;
+
                   return (
-                    <motion.line 
-                      key={i}
-                      x1="200" y1="200" 
-                      x2={x2} y2={y2} 
-                      stroke={isActive ? "rgba(0, 255, 255, 0.5)" : "rgba(255,255,255,0.05)"} 
-                      strokeWidth={isActive ? "2" : "1"}
-                      transition={{ duration: 0.3 }}
-                    />
+                    <motion.div
+                      key={axis.id}
+                      className="absolute z-10"
+                      style={{ 
+                        left: `calc(50% + ${xPercent}%)`, 
+                        top: `calc(50% + ${yPercent}%)`,
+                        x: '-50%', 
+                        y: '-50%' 
+                      }}
+                    >
+                      {/* Counter-rotation to keep icons upright */}
+                      <motion.div 
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                        className="relative"
+                      >
+                        <div 
+                          className="relative group cursor-pointer"
+                          onMouseEnter={() => setActiveAxis(axis.id)}
+                          onMouseLeave={() => setActiveAxis(null)}
+                          onClick={() => setActiveAxis(isActive ? null : axis.id)}
+                        >
+                          {/* Circular Container */}
+                          <div 
+                            className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-500 relative z-10 border-2 ${
+                              isActive 
+                                ? 'shadow-[0_0_30px_rgba(217,0,255,0.4)] border-brand-pink scale-110' 
+                                : 'bg-brand-surface/90 border-brand-pink/40 hover:border-brand-pink hover:scale-105'
+                            }`}
+                          >
+                            <Icon 
+                              size={isActive ? 28 : 24} 
+                              className="transition-all duration-300"
+                              style={{ color: isActive ? '#fff' : axis.color }} 
+                            />
+                          </div>
+
+                          {/* Label Container */}
+                          <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 px-4 py-1.5 rounded-lg bg-brand-dark/90 backdrop-blur-md border border-brand-pink/20 transition-all duration-500 min-w-[100px] text-center shadow-xl ${
+                            isActive ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-90'
+                          }`}>
+                            <span 
+                              className="text-[10px] md:text-xs font-sans font-black tracking-widest whitespace-nowrap uppercase"
+                              style={{ color: axis.color }}
+                            >
+                              {axis.title}
+                            </span>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </motion.div>
                   );
                 })}
-              </svg>
-
-              {/* Axis Nodes - Stars */}
-              {axes.map((axis) => {
-                const radiusPercent = 40; 
-                const radian = (axis.angle * Math.PI) / 180;
-                const xPercent = Math.cos(radian) * radiusPercent;
-                const yPercent = Math.sin(radian) * radiusPercent;
-                const isActive = activeAxis === axis.id;
-                const Icon = axis.icon;
-
-                return (
-                  <motion.div
-                    key={axis.id}
-                    className="absolute z-10"
-                    style={{ 
-                      left: `calc(50% + ${xPercent}%)`, 
-                      top: `calc(50% + ${yPercent}%)`,
-                      x: '-50%', 
-                      y: '-50%' 
-                    }}
-                    onMouseEnter={() => setActiveAxis(axis.id)}
-                    onMouseLeave={() => setActiveAxis(null)}
-                    onClick={() => setActiveAxis(isActive ? null : axis.id)}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <div className="relative group cursor-pointer">
-                      {/* Star Shape Container */}
-                      <div className={`w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-all duration-300 relative z-10 ${
-                        isActive 
-                          ? 'text-brand-cyan' 
-                          : 'text-brand-cyan/40 hover:text-brand-cyan/70'
-                      }`}>
-                        <Star 
-                          size={isActive ? 40 : 36} 
-                          className={`absolute transition-all duration-500 ${isActive ? 'fill-brand-cyan/20' : 'fill-transparent'}`} 
-                          strokeWidth={1}
-                        />
-                        <div className="relative z-20">
-                          <Icon size={18} />
-                        </div>
-                      </div>
-
-                      {/* Label */}
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 text-center w-24">
-                        <span className={`text-[10px] md:text-xs font-sans font-bold transition-colors tracking-wider ${isActive ? 'text-brand-cyan' : 'text-white/30'}`}>
-                          {axis.title}
-                        </span>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+              </motion.div>
             </div>
 
             {/* Description Panel */}
@@ -286,7 +308,10 @@ const Methodology: React.FC<MethodologyProps> = ({ preview }) => {
                     className="relative z-10"
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-2 h-2 rounded-full bg-brand-pink animate-pulse"></div>
+                      <div 
+                        className="w-2 h-2 rounded-full animate-pulse"
+                        style={{ backgroundColor: axes.find(a => a.id === activeAxis)?.color }}
+                      ></div>
                       <h5 className="text-2xl font-bold text-white font-sans uppercase tracking-wider">
                         {axes.find(a => a.id === activeAxis)?.title}
                       </h5>
